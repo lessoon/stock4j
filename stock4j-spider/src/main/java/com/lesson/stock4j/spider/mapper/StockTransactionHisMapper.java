@@ -1,6 +1,6 @@
 package com.lesson.stock4j.spider.mapper;
 
-import com.lesson.stock4j.spider.model.StockTransactionHisEntity;
+import com.lesson.stock4j.spider.entity.StockTransactionHisEntity;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 
@@ -30,6 +30,6 @@ public interface StockTransactionHisMapper {
      * @param code code
      * @return DATE_FORMAT(MAX(DATE))
      */
-    @Select("SELECT DATE_FORMAT(MAX(STH.DATE),'%Y-%M-%D') FROM STOCK_TRANSACTION_HIS STH WHERE CODE = #{code}")
+    @Select("SELECT DATE_FORMAT(MAX(sth.date),'%Y-%m-%d') FROM stock_transaction_his sth WHERE sth.code = #{code}")
     String selectMaxDate(String code);
 }

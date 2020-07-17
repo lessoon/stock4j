@@ -2,9 +2,9 @@ package com.lesson.stock4j.spider.spiders.crawl;
 
 import com.lesson.stock4j.spider.mapper.StockListMapper;
 import com.lesson.stock4j.spider.mapper.StockMoneyFlowHisMapper;
-import com.lesson.stock4j.spider.model.StockListEntity;
-import com.lesson.stock4j.spider.model.StockMoneyFlowHisEntity;
-import com.lesson.stock4j.spider.model.WebPage;
+import com.lesson.stock4j.spider.entity.StockListEntity;
+import com.lesson.stock4j.spider.entity.StockMoneyFlowHisEntity;
+import com.lesson.stock4j.spider.entity.WebPageEntity;
 import com.lesson.stock4j.spider.spiders.AbstractHtmlSpider;
 import com.lesson.stock4j.spider.util.StringUtils;
 import lombok.extern.slf4j.Slf4j;
@@ -90,17 +90,17 @@ public class StockMoneyFlowSpider extends AbstractHtmlSpider {
         this.pageUrl = MONEY_FLOW_URL + symbol + SUFFIX;
         this.ignoreContentType = true;
         // 获取第一页
-        WebPage webPage = null;
+        WebPageEntity webPageEntity = null;
         try {
-            webPage = super.crawlPage();
+            webPageEntity = super.crawlPage();
         } catch (SocketTimeoutException ex) {
             log.error("crawlPage {} 网络超时", pageUrl);
         } catch (Exception e) {
             log.error("crawlPage {} {}", pageUrl, e);
         }
         // 解析page信息
-        assert webPage != null;
-        Document doc = webPage.getDocument();
+        assert webPageEntity != null;
+        Document doc = webPageEntity.getDocument();
         Elements trs = doc.getElementsByClass("mod_pages").select("a");
         String href = trs.get(trs.size() - 2).attr("href");
         log.info("开始处理 code={}, href = {}", symbol, href);
@@ -111,15 +111,15 @@ public class StockMoneyFlowSpider extends AbstractHtmlSpider {
     /**
      * 页面解析并入库
      *
-     * @param webPage webPage
+     * @param webPageEntity webPage
      **/
     @Override
-    public void parsePage(WebPage webPage) {
-        if (null == webPage) {
+    public void parsePage(WebPageEntity webPageEntity) {
+        if (null == webPageEntity) {
             return;
         }
-        String code = webPage.getPageUrl().replace(MONEY_FLOW_URL, "").substring(0, 6);
-        Document doc = webPage.getDocument();
+        String code = webPageEntity.getPageUrl().replace(MONEY_FLOW_URL, "").substring(0, 6);
+        Document doc = webPageEntity.getDocument();
         Elements trs = doc.getElementsByClass("table_bg001 border_box").select("tr");
         trs.forEach(tr -> {
             Elements tds = tr.select("td");

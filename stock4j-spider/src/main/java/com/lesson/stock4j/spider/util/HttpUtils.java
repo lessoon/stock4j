@@ -1,6 +1,6 @@
 package com.lesson.stock4j.spider.util;
 
-import com.lesson.stock4j.spider.model.WebPage;
+import com.lesson.stock4j.spider.entity.WebPageEntity;
 import lombok.extern.slf4j.Slf4j;
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
@@ -38,11 +38,11 @@ public class HttpUtils {
      * @param ignoreHttpErrors  是否忽略http错误
      * @return
      */
-    public static WebPage getWebPage(String pageUrl, Connection.Method method,
-                                     Integer timeOut, String useAgent, String referer,
-                                     Map<String, String> cookie, Proxy proxy,
-                                     Boolean ignoreContentType, Boolean ignoreHttpErrors) throws IOException {
-        WebPage webPage = null;
+    public static WebPageEntity getWebPage(String pageUrl, Connection.Method method,
+                                           Integer timeOut, String useAgent, String referer,
+                                           Map<String, String> cookie, Proxy proxy,
+                                           Boolean ignoreContentType, Boolean ignoreHttpErrors) throws IOException {
+        WebPageEntity webPageEntity = null;
         Connection connection = Jsoup.connect(pageUrl)
                 .timeout(null == timeOut ? 8000 : timeOut)
                 .method(null == method ? Connection.Method.GET : method);
@@ -69,8 +69,8 @@ public class HttpUtils {
         log.debug(pageUrl);
         Connection.Response response = connection.execute();
         Document document = response.parse();
-        webPage = new WebPage(System.currentTimeMillis() - start, pageUrl, document, document.html(), response.statusCode());
-        return webPage;
+        webPageEntity = new WebPageEntity(System.currentTimeMillis() - start, pageUrl, document, document.html(), response.statusCode());
+        return webPageEntity;
     }
 
     /**

@@ -1,6 +1,6 @@
 package com.lesson.stock4j.spider.spiders;
 
-import com.lesson.stock4j.spider.model.WebPage;
+import com.lesson.stock4j.spider.entity.WebPageEntity;
 import com.lesson.stock4j.spider.util.HttpUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.jsoup.Connection;
@@ -31,7 +31,7 @@ public abstract class AbstractHtmlSpider implements IHtmlSpider {
     protected Connection.Method method;
 
     @Override
-    public WebPage crawlPage() throws IOException {
+    public WebPageEntity crawlPage() throws IOException {
         return HttpUtils.getWebPage(pageUrl, method, timeOut, useAgent, referer, cookie, proxy, ignoreContentType, ignoreHttpErrors);
     }
 }

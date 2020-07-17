@@ -1,7 +1,8 @@
 package com.lesson.stock4j.spider.cache;
 
 import com.lesson.stock4j.spider.mapper.StockListMapper;
-import com.lesson.stock4j.spider.model.StockListEntity;
+import com.lesson.stock4j.spider.entity.StockListEntity;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -18,6 +19,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * @since JDK 1.8
  * <p>Date: 2020-07-16 17-43
  */
+@Slf4j
 @Component
 public class StockListCache {
 
@@ -31,11 +33,13 @@ public class StockListCache {
      */
     @PostConstruct
     public void init() {
+        log.info("开始加载 stock_list 数据缓存！");
         List<StockListEntity> allStockList = mapper.findAll();
         allStockList.forEach(entity -> {
             String symbol = entity.getSymbol();
             STOCK_LIST_CACHE.put(symbol, entity);
         });
+        log.info("完成加载 stock_list 数据缓存！");
     }
 
     public static StockListEntity getStockInfoBySymbol(String symbol) {

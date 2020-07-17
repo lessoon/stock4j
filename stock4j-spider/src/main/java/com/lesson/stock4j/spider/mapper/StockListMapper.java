@@ -1,6 +1,6 @@
 package com.lesson.stock4j.spider.mapper;
 
-import com.lesson.stock4j.spider.model.StockListEntity;
+import com.lesson.stock4j.spider.entity.StockListEntity;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.InsertProvider;
 import org.apache.ibatis.annotations.Select;

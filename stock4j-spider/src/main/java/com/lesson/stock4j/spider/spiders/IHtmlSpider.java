@@ -1,7 +1,7 @@
 package com.lesson.stock4j.spider.spiders;
 
 
-import com.lesson.stock4j.spider.model.WebPage;
+import com.lesson.stock4j.spider.entity.WebPageEntity;
 
 import java.io.IOException;
 
@@ -20,13 +20,13 @@ public interface IHtmlSpider {
      *
      * @return WebPage
      */
-    WebPage crawlPage() throws IOException;
+    WebPageEntity crawlPage() throws IOException;
 
     /**
      * 解析页面
      *
-     * @param webPage webPage
+     * @param webPageEntity webPage
      */
-    void parsePage(WebPage webPage);
+    void parsePage(WebPageEntity webPageEntity);
 
 }

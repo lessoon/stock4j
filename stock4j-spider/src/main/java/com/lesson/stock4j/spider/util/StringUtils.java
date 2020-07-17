@@ -15,7 +15,4 @@ public class StringUtils {
         return UUID.randomUUID().toString();
     }
 
-    public static void main(String[] args) {
-        System.out.println(get32Uuid());
-    }
 }

@@ -4,7 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.lesson.stock4j.spider.cache.StockListCache;
 import com.lesson.stock4j.spider.mapper.StockListMapper;
-import com.lesson.stock4j.spider.model.StockListEntity;
+import com.lesson.stock4j.spider.entity.StockListEntity;
 import com.lesson.stock4j.spider.spiders.AbstractTushareSpider;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,11 +39,17 @@ public class StockListSpider extends AbstractTushareSpider {
         // 格式转换
         List<StockListEntity> stock = parse(result, StockListEntity.class);
         // 入库
-        stock.forEach(entity -> {
-            String symbol = entity.getSymbol();
-            if (StockListCache.getStockInfoBySymbol(symbol) == null) {
-                mapper.insert(entity);
-                StockListCache.setStockInfo(entity);
+        stock.parallelStream().forEach(entity -> {
+            if (entity != null) {
+                String symbol = entity.getSymbol();
+                if (StockListCache.getStockInfoBySymbol(symbol) == null) {
+                    mapper.insert(entity);
+                    StockListCache.setStockInfo(entity);
+                } else {
+                    log.debug("code {} 已存在！", symbol);
+                }
+            } else {
+                log.error("本条数据为空！");
             }
         });
     }

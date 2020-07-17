@@ -1,6 +1,6 @@
 package com.lesson.stock4j.spider.mapper;
 
-import com.lesson.stock4j.spider.model.StockMoneyFlowHisEntity;
+import com.lesson.stock4j.spider.entity.StockMoneyFlowHisEntity;
 import org.apache.ibatis.annotations.Insert;
 
 /**

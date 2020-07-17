@@ -1,4 +1,4 @@
-package com.lesson.stock4j.spider.model;
+package com.lesson.stock4j.spider.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -16,7 +16,7 @@ import org.jsoup.nodes.Document;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class WebPage {
+public class WebPageEntity {
     /**
      * 任务完成时间
      **/
