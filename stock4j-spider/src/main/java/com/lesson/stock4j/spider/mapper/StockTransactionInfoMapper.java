@@ -19,8 +19,8 @@ public interface StockTransactionInfoMapper {
      * @param entity entity
      * @return int
      */
-    @Insert("INSERT INTO stock_transaction_info (uuid, date, code, name, tclose, high, low, topen, lclose, chg, pchg, turnover, voturnover, vaturnover, tcap, mcap) " +
+    @Insert("INSERT INTO stock_transaction_info (uuid, stock_code, trans_id, PRICE, DATE_STR, DATE, TRADE_TYPE_STR, PRICE_PRE, VOLUME_INC, TRADE_TYPE, TURNOVER_INC, PRICE_INC) " +
             "VALUES " +
-            "(#{uuid},#{date},#{code},#{name},#{tclose},#{high},#{low},#{topen},#{lclose},#{chg},#{pchg},#{turnover},#{voturnover},#{vaturnover},#{tcap},#{mcap})")
+            "(#{uuid},#{stockCode},#{transId},#{price},#{dateStr},#{date},#{tradeTypeStr},#{pricePre},#{volumeInc},#{tradeType},#{turnoverInc},#{priceInc})")
     int insert(StockTransactionInfoEntity entity);
 }

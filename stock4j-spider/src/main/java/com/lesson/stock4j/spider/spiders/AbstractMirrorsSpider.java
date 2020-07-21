@@ -4,7 +4,14 @@ import com.alibaba.fastjson.JSON;
 import com.lesson.stock4j.spider.entity.StockTransactionHisEntity;
 import com.lesson.stock4j.spider.util.HttpUtils;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpRequest;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.client.ClientHttpRequestExecution;
+import org.springframework.http.client.ClientHttpRequestInterceptor;
+import org.springframework.http.client.ClientHttpResponse;
+import org.springframework.http.client.support.HttpRequestWrapper;
 import org.springframework.web.client.RestTemplate;
 
 import java.io.BufferedReader;
@@ -28,6 +35,9 @@ import static com.lesson.stock4j.spider.constant.MirrorsConstant.SYNC_URL;
  */
 @Slf4j
 public class AbstractMirrorsSpider implements IMirrorsSpider {
+
+    @Autowired
+    private RestTemplate restTemplate;
 
     /**
      * 解析Csv时使用
@@ -56,7 +66,7 @@ public class AbstractMirrorsSpider implements IMirrorsSpider {
     @Override
     public String getSyncSingleTransactionDate(String code) {
         String fullUrl = SYNC_URL + code;
-        ResponseEntity<String> result = new RestTemplate().getForEntity(fullUrl, String.class);
+        ResponseEntity<String> result = restTemplate.getForEntity(fullUrl, String.class);
         return result.getBody();
     }
 

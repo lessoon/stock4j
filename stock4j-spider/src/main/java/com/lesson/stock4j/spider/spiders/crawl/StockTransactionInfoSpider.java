@@ -2,19 +2,17 @@ package com.lesson.stock4j.spider.spiders.crawl;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.lesson.stock4j.common.util.StringUtils;
 import com.lesson.stock4j.spider.cache.StockListCache;
 import com.lesson.stock4j.spider.mapper.StockTransactionInfoMapper;
 import com.lesson.stock4j.spider.entity.StockListEntity;
 import com.lesson.stock4j.spider.entity.StockTransactionInfoEntity;
 import com.lesson.stock4j.spider.spiders.AbstractMirrorsSpider;
-import com.lesson.stock4j.spider.util.StringUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -27,8 +25,8 @@ import java.util.concurrent.ConcurrentHashMap;
  * @since JDK 1.7
  */
 @Slf4j
-@Component("syncTransactionSpider")
-public class StockTransactioninfoSpider extends AbstractMirrorsSpider {
+@Component("stockTransactionInfoSpider")
+public class StockTransactionInfoSpider extends AbstractMirrorsSpider {
 
     @Autowired
     private StockTransactionInfoMapper transactionInfoMapper;
@@ -37,8 +35,8 @@ public class StockTransactioninfoSpider extends AbstractMirrorsSpider {
     private static final Object PRESENT = new Object();
 
     public void run() {
-        Map<String, StockListEntity> stockListAll = StockListCache.getStockListAll();
-        stockListAll.forEach((code, entity) -> {
+        Map<String, StockListEntity> stockMap = StockListCache.getStockListAll();
+        stockMap.forEach((code, entity) -> {
             String stockName = entity.getName();
             String resultStr = getSyncSingleTransactionDate(code);
             if (!"".equals(resultStr)) {

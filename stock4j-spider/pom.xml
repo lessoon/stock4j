@@ -63,12 +63,72 @@
         </dependency>
         <!-- json end -->
 
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.5.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+
         <!--json 工具-->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
             <version>1.2.44</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.example</groupId>
+            <artifactId>stock4j-quartz</artifactId>
+            <version>1.0-SNAPSHOT</version>
+<!--            <scope>system</scope>-->
+<!--            <systemPath>${project.basedir}/../stock4j-quartz/target/stock4j-quartz-1.0-SNAPSHOT.jar</systemPath>-->
+        </dependency>
+
+        <dependency>
+            <groupId>org.example</groupId>
+            <artifactId>stock4j-common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+<!--            <scope>system</scope>-->
+<!--            <systemPath>${project.basedir}/../stock4j-common/target/stock4j-common-1.0-SNAPSHOT.jar</systemPath>-->
+        </dependency>
     </dependencies>
+
+    <!-- maven 打包-->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <!-- 指定mainClass路径 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.0.2</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <mainClass>com.lesson.stock4j.spider.Main</mainClass> <!-- 此处为主入口-->
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

@@ -16,6 +16,6 @@ public interface TushareConstant {
     /**
      * TUTOKEN
      **/
-    String TUTOKEN = "66cdab7a757dcb728f8833f732a928791d67b6f38e1cd8d94bb79a0d";
+    String TUTOKEN = "fd94eeab882a71fc8d945743954e9631c27543c0f524c4e058416dcd";
 
 }
