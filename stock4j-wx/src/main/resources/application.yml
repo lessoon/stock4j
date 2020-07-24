@@ -1,0 +1,13 @@
+logging:
+  level:
+    org.springframework.web: INFO
+    com.github.binarywang.demo.wx.mp: DEBUG
+    me.chanjar.weixin: DEBUG
+wx:
+  mp:
+    configs:
+      - appId: xxxx
+        secret: xxxx
+        token: xxxx
+        aesKey: xxxx
+
