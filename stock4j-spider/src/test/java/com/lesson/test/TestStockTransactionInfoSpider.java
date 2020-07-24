@@ -22,9 +22,9 @@ public class TestStockTransactionInfoSpider {
 
     @Autowired
     private StockTransactionInfoSpider spider;
-//
-//    @Test
-//    public void test(){
-//        spider.run();
-//    }
+
+    @Test
+    public void test() {
+        spider.run();
+    }
 }
