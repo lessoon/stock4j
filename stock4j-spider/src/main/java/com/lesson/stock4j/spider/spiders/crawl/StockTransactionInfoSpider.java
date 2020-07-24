@@ -4,15 +4,17 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.lesson.stock4j.common.util.StringUtils;
 import com.lesson.stock4j.spider.cache.StockListCache;
-import com.lesson.stock4j.spider.mapper.StockTransactionInfoMapper;
 import com.lesson.stock4j.spider.entity.StockListEntity;
 import com.lesson.stock4j.spider.entity.StockTransactionInfoEntity;
+import com.lesson.stock4j.spider.mapper.StockTransactionInfoMapper;
 import com.lesson.stock4j.spider.spiders.AbstractMirrorsSpider;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.util.*;
+import java.util.Date;
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**

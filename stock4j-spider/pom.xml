@@ -84,16 +84,23 @@
             <groupId>org.example</groupId>
             <artifactId>stock4j-quartz</artifactId>
             <version>1.0-SNAPSHOT</version>
-<!--            <scope>system</scope>-->
-<!--            <systemPath>${project.basedir}/../stock4j-quartz/target/stock4j-quartz-1.0-SNAPSHOT.jar</systemPath>-->
+            <!--            <scope>system</scope>-->
+            <!--            <systemPath>${project.basedir}/../stock4j-quartz/target/stock4j-quartz-1.0-SNAPSHOT.jar</systemPath>-->
         </dependency>
 
         <dependency>
             <groupId>org.example</groupId>
             <artifactId>stock4j-common</artifactId>
             <version>1.0-SNAPSHOT</version>
-<!--            <scope>system</scope>-->
-<!--            <systemPath>${project.basedir}/../stock4j-common/target/stock4j-common-1.0-SNAPSHOT.jar</systemPath>-->
+            <!--            <scope>system</scope>-->
+            <!--            <systemPath>${project.basedir}/../stock4j-common/target/stock4j-common-1.0-SNAPSHOT.jar</systemPath>-->
+        </dependency>
+
+        <!-- MyBatis-Plus -->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <version>3.2.0</version>
         </dependency>
     </dependencies>
 

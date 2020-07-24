@@ -51,7 +51,7 @@ public class RestTemplateConfig {
     }
 
     public class InputSteamHttpMessageConverter extends MappingJackson2HttpMessageConverter {
-        public InputSteamHttpMessageConverter(){
+        public InputSteamHttpMessageConverter() {
             List<MediaType> mediaTypes = new ArrayList<>();
             mediaTypes.add(MediaType.APPLICATION_OCTET_STREAM);  //加入text/html类型的支持
             setSupportedMediaTypes(mediaTypes);// tag6

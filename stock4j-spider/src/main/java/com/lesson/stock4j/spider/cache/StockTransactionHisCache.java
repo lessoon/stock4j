@@ -1,7 +1,7 @@
 package com.lesson.stock4j.spider.cache;
 
-import com.lesson.stock4j.spider.mapper.StockTransactionHisMapper;
 import com.lesson.stock4j.spider.entity.StockListEntity;
+import com.lesson.stock4j.spider.mapper.StockTransactionHisMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -51,11 +51,11 @@ public class StockTransactionHisCache {
         return HIS_DATA_CACHE.get(symbol);
     }
 
-    public static void setSymbolMaxDate(String symbol,String maxDate) {
+    public static void setSymbolMaxDate(String symbol, String maxDate) {
         HIS_DATA_CACHE.put(symbol, maxDate);
     }
 
-    public static Map<String, String> getStockListAll(){
+    public static Map<String, String> getStockListAll() {
         return HIS_DATA_CACHE;
     }
 }
