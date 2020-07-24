@@ -6,8 +6,8 @@ logging:
 wx:
   mp:
     configs:
-      - appId: xxxx
-        secret: xxxx
-        token: xxxx
-        aesKey: xxxx
+      - appId: wxb666e9ab90086512
+        secret: c1ee62f8e0fec07effdc875d2c7238ef
+        token: 5c4619f98c0ea3cf962043d94f6a1eb1
+        aesKey: E6ACsyxo8iH9oVWEEy5NSsPs7SlFxtKnQs2Oexvweul
 
