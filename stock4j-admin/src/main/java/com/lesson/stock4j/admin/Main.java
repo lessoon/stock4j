@@ -1,4 +1,4 @@
-package com.lesson.stock4j.quartz;
+package com.lesson.stock4j.admin;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
@@ -8,20 +8,20 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
 
 /**
- * 功能概述：启动类
+ * 项目启动类
  *
  * @author Du Lee
  * @version 1.0
- * @since JDK 1.7
- * <p>Date: 2020-07-14 17-24
+ * @since JDK 1.8
+ * <p>Date: 2020-07-23 15-35
  */
-@MapperScan(basePackages = {"com.lesson.stock4j.quartz.mapper"})
+@MapperScan("com.lesson.stock4j.*.mapper")
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class, HibernateJpaAutoConfiguration.class})
 @EnableAutoConfiguration
 public class Main {
 
     public static void main(String[] args) {
-        SpringApplication.run(Main.class);
+        SpringApplication.run(com.lesson.stock4j.spider.Main.class);
     }
 
 }

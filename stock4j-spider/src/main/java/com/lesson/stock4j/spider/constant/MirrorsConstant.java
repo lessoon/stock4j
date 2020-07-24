@@ -25,7 +25,12 @@ public interface MirrorsConstant {
     String HISTORY_DATA_URL_FIELDS = "fields=TCLOSE;HIGH;LOW;TOPEN;LCLOSE;CHG;PCHG;TURNOVER;VOTURNOVER;VATURNOVER;TCAP;MCAP";
 
     /**
-     * 历史交易数据路径
+     * 实时交易数据路径
      */
-    String SYNC_URL = "http://quotes.money.163.com/service/zhubi_ajax.html?symbol=";
+    String SYNC_TRANSACTION_INFO_URL = "http://quotes.money.163.com/service/zhubi_ajax.html?symbol=";
+
+    /**
+     * 交易数据详情（仅供查询5天内的数据）
+     */
+    String TRANSACTION_INFO_URL = "http://quotes.money.163.com/cjmx/";
 }

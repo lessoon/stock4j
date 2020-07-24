@@ -80,9 +80,29 @@ create table stock_transaction_his
 ) engine = innodb
   default charset = utf8mb4 comment '交易信息历史表';
 
--- 交易信息详情表
-drop table if exists `stock_transaction_nfo`;
-create table stock_transaction_nfo
+-- 实时交易信息详情表
+drop table if exists `stock_sync_transaction_info`;
+create table stock_sync_transaction_info
+(
+    uuid           varchar(32)                         not null comment 'uuid'
+        primary key,
+    stock_code     varchar(32)                         not null comment 'stock_code',
+    trans_id       varchar(32)                         not null comment '网易成交记录的uuid',
+    PRICE          varchar(32)                         not null comment '成交价(元)',
+    DATE_STR       varchar(32)                         not null comment '时间',
+    DATE           timestamp default CURRENT_TIMESTAMP not null on update CURRENT_TIMESTAMP comment '详细时间',
+    TRADE_TYPE_STR varchar(32)                         not null comment '性质',
+    PRICE_PRE      varchar(32)                         null comment '价格变动(元)',
+    VOLUME_INC     varchar(32)                         null comment '成交量',
+    TRADE_TYPE     varchar(32)                         null comment '性质类型',
+    TURNOVER_INC   varchar(32)                         null comment '成交金额',
+    PRICE_INC      varchar(32)                         null comment '价格变动(元)'
+) engine = innodb
+  default charset = utf8mb4 comment '实时交易信息详情表';
+
+-- 实时交易信息详情表
+drop table if exists `stock_transaction_info`;
+create table stock_transaction_info
 (
     uuid           varchar(32)                         not null comment 'uuid'
         primary key,

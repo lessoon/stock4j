@@ -17,7 +17,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static com.lesson.stock4j.spider.constant.MirrorsConstant.SYNC_URL;
+import static com.lesson.stock4j.spider.constant.MirrorsConstant.SYNC_TRANSACTION_INFO_URL;
 
 /**
  * 功能概述：网易财经数据爬虫
@@ -59,7 +59,7 @@ public class AbstractMirrorsSpider implements IMirrorsSpider {
 
     @Override
     public String getSyncSingleTransactionDate(String code) {
-        String fullUrl = SYNC_URL + code;
+        String fullUrl = SYNC_TRANSACTION_INFO_URL + code;
         ResponseEntity<String> result = restTemplate.getForEntity(fullUrl, String.class);
         return result.getBody();
     }
