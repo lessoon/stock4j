@@ -3,8 +3,8 @@ package com.lesson.stock4j.spider;
 import com.lesson.stock4j.spider.util.QuartzUtils;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
 
 /**
  * 功能概述：启动类
@@ -14,7 +14,7 @@ import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfigurat
  * @since JDK 1.7
  * <p>Date: 2020-07-14 17-24
  */
-@MapperScan(basePackages = {"com.lesson.stock4j.*.*"},basePackageClasses = QuartzUtils.class)
+@MapperScan(basePackages = {"com.lesson.stock4j.*"})
 @SpringBootApplication
 public class Main {
 

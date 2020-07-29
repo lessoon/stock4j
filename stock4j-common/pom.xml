@@ -14,13 +14,9 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-context-support</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.9-rc</version>
+            <groupId>org.example</groupId>
+            <artifactId>stock4j-framework</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
 
         <!-- Apache Lang3 -->
@@ -58,6 +54,14 @@
             <artifactId>jackson-databind</artifactId>
         </dependency>
         <!-- json end -->
+
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.5.3</version>
+        </dependency>
+
+
     </dependencies>
 
     <!-- maven 打包-->
