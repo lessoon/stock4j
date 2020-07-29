@@ -2,11 +2,11 @@ package com.lesson.stock4j.spider.spiders.crawl;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.lesson.stock4j.common.entity.StockListEntity;
+import com.lesson.stock4j.common.entity.StockSyncTransactionInfoEntity;
+import com.lesson.stock4j.common.mapper.StockSyncTransactionInfoMapper;
 import com.lesson.stock4j.common.util.StringUtils;
 import com.lesson.stock4j.spider.cache.StockListCache;
-import com.lesson.stock4j.spider.entity.StockListEntity;
-import com.lesson.stock4j.spider.entity.StockSyncTransactionInfoEntity;
-import com.lesson.stock4j.spider.mapper.StockSyncTransactionInfoMapper;
 import com.lesson.stock4j.spider.spiders.AbstractMirrorsSpider;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

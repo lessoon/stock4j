@@ -2,9 +2,9 @@ package com.lesson.stock4j.spider.spiders.crawl;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.lesson.stock4j.common.entity.StockListEntity;
+import com.lesson.stock4j.common.mapper.StockListMapper;
 import com.lesson.stock4j.spider.cache.StockListCache;
-import com.lesson.stock4j.spider.entity.StockListEntity;
-import com.lesson.stock4j.spider.mapper.StockListMapper;
 import com.lesson.stock4j.spider.spiders.AbstractTushareSpider;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

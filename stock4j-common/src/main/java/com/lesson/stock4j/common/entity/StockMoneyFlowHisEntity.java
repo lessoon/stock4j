@@ -1,4 +1,4 @@
-package com.lesson.stock4j.spider.entity;
+package com.lesson.stock4j.common.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

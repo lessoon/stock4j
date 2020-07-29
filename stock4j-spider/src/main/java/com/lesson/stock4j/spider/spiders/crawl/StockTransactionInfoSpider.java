@@ -2,11 +2,11 @@ package com.lesson.stock4j.spider.spiders.crawl;
 
 import cn.hutool.poi.excel.ExcelReader;
 import cn.hutool.poi.excel.ExcelUtil;
+import com.lesson.stock4j.common.entity.StockListEntity;
+import com.lesson.stock4j.common.entity.StockTransactionInfoEntity;
+import com.lesson.stock4j.common.mapper.StockTransactionInfoMapper;
 import com.lesson.stock4j.common.util.StringUtils;
 import com.lesson.stock4j.spider.cache.StockListCache;
-import com.lesson.stock4j.spider.entity.StockListEntity;
-import com.lesson.stock4j.spider.entity.StockTransactionInfoEntity;
-import com.lesson.stock4j.spider.mapper.StockTransactionInfoMapper;
 import com.lesson.stock4j.spider.spiders.AbstractMirrorsSpider;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

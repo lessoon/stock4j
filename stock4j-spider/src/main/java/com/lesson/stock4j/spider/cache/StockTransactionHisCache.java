@@ -1,7 +1,7 @@
 package com.lesson.stock4j.spider.cache;
 
-import com.lesson.stock4j.spider.entity.StockListEntity;
-import com.lesson.stock4j.spider.mapper.StockTransactionHisMapper;
+import com.lesson.stock4j.common.entity.StockListEntity;
+import com.lesson.stock4j.common.mapper.StockTransactionHisMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

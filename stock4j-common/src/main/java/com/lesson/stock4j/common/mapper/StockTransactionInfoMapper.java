@@ -1,6 +1,6 @@
-package com.lesson.stock4j.spider.mapper;
+package com.lesson.stock4j.common.mapper;
 
-import com.lesson.stock4j.spider.entity.StockTransactionInfoEntity;
+import com.lesson.stock4j.common.entity.StockTransactionInfoEntity;
 import org.apache.ibatis.annotations.Insert;
 
 /**

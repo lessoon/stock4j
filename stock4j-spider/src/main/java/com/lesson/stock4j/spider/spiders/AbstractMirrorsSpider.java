@@ -1,7 +1,6 @@
 package com.lesson.stock4j.spider.spiders;
 
 import com.alibaba.fastjson.JSON;
-import com.lesson.stock4j.spider.entity.StockTransactionHisEntity;
 import com.lesson.stock4j.spider.util.HttpUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -90,7 +89,7 @@ public class AbstractMirrorsSpider implements IMirrorsSpider {
             }
         }
         inputStream.close();
-        return (List<T>) JSON.parseArray(JSON.toJSONString(resultData), StockTransactionHisEntity.class);
+        return (List<T>) JSON.parseArray(JSON.toJSONString(resultData), clazz);
     }
 
 }

@@ -1,11 +1,11 @@
 package com.lesson.stock4j.spider.spiders.crawl;
 
+import com.lesson.stock4j.common.entity.StockListEntity;
+import com.lesson.stock4j.common.entity.StockTransactionHisEntity;
+import com.lesson.stock4j.common.mapper.StockTransactionHisMapper;
 import com.lesson.stock4j.common.util.StringUtils;
 import com.lesson.stock4j.spider.cache.StockListCache;
 import com.lesson.stock4j.spider.cache.StockTransactionHisCache;
-import com.lesson.stock4j.spider.entity.StockListEntity;
-import com.lesson.stock4j.spider.entity.StockTransactionHisEntity;
-import com.lesson.stock4j.spider.mapper.StockTransactionHisMapper;
 import com.lesson.stock4j.spider.spiders.AbstractMirrorsSpider;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

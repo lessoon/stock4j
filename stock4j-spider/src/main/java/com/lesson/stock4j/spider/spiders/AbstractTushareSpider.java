@@ -2,7 +2,6 @@ package com.lesson.stock4j.spider.spiders;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.lesson.stock4j.spider.entity.StockListEntity;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -73,6 +72,6 @@ public class AbstractTushareSpider implements ITushareSpider {
                 resultData.add(rowMap);
             });
         }
-        return (List<T>) JSON.parseArray(JSON.toJSONString(resultData), StockListEntity.class);
+        return (List<T>) JSON.parseArray(JSON.toJSONString(resultData), clazz);
     }
 }
