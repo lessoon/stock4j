@@ -27,8 +27,9 @@ public interface StockTransactionHisMapper {
 
     /**
      * 根据code查询导入的最大时间
+     *
      * @param code code
-     * @return DATE_FORMAT(MAX(DATE))
+     * @return DATE_FORMAT(MAX ( DATE))
      */
     @Select("SELECT DATE_FORMAT(MAX(sth.date),'%Y-%m-%d') FROM stock_transaction_his sth WHERE sth.code = #{code}")
     String selectMaxDate(String code);

@@ -5,13 +5,7 @@ import com.lesson.stock4j.spider.entity.StockTransactionHisEntity;
 import com.lesson.stock4j.spider.util.HttpUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpRequest;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.http.client.ClientHttpRequestExecution;
-import org.springframework.http.client.ClientHttpRequestInterceptor;
-import org.springframework.http.client.ClientHttpResponse;
-import org.springframework.http.client.support.HttpRequestWrapper;
 import org.springframework.web.client.RestTemplate;
 
 import java.io.BufferedReader;
@@ -23,7 +17,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static com.lesson.stock4j.spider.constant.MirrorsConstant.SYNC_URL;
+import static com.lesson.stock4j.spider.constant.MirrorsConstant.SYNC_TRANSACTION_INFO_URL;
 
 /**
  * 功能概述：网易财经数据爬虫
@@ -65,7 +59,7 @@ public class AbstractMirrorsSpider implements IMirrorsSpider {
 
     @Override
     public String getSyncSingleTransactionDate(String code) {
-        String fullUrl = SYNC_URL + code;
+        String fullUrl = SYNC_TRANSACTION_INFO_URL + code;
         ResponseEntity<String> result = restTemplate.getForEntity(fullUrl, String.class);
         return result.getBody();
     }

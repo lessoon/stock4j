@@ -1,11 +1,11 @@
 package com.lesson.stock4j.spider.spiders.crawl;
 
 import com.lesson.stock4j.common.util.StringUtils;
-import com.lesson.stock4j.spider.mapper.StockListMapper;
-import com.lesson.stock4j.spider.mapper.StockMoneyFlowHisMapper;
 import com.lesson.stock4j.spider.entity.StockListEntity;
 import com.lesson.stock4j.spider.entity.StockMoneyFlowHisEntity;
 import com.lesson.stock4j.spider.entity.WebPageEntity;
+import com.lesson.stock4j.spider.mapper.StockListMapper;
+import com.lesson.stock4j.spider.mapper.StockMoneyFlowHisMapper;
 import com.lesson.stock4j.spider.spiders.AbstractHtmlSpider;
 import lombok.extern.slf4j.Slf4j;
 import org.jsoup.nodes.Document;

@@ -3,13 +3,12 @@ package com.lesson.stock4j.spider.spiders.crawl;
 import com.lesson.stock4j.common.util.StringUtils;
 import com.lesson.stock4j.spider.cache.StockListCache;
 import com.lesson.stock4j.spider.cache.StockTransactionHisCache;
-import com.lesson.stock4j.spider.mapper.StockTransactionHisMapper;
 import com.lesson.stock4j.spider.entity.StockListEntity;
 import com.lesson.stock4j.spider.entity.StockTransactionHisEntity;
+import com.lesson.stock4j.spider.mapper.StockTransactionHisMapper;
 import com.lesson.stock4j.spider.spiders.AbstractMirrorsSpider;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-
 import org.springframework.stereotype.Component;
 
 import java.io.BufferedReader;
@@ -26,7 +25,8 @@ import static com.lesson.stock4j.spider.constant.MirrorsConstant.HISTORY_DATA_UR
 
 
 /**
- * 功能概述：历史交易数据爬取
+ * <p>功能概述：历史交易数据爬取 </p>
+ * <p>解析历史数据的CSV文件，耗时可能会比较长。</p>
  *
  * @author Lidu
  * @version 1.0

@@ -21,7 +21,9 @@ import java.util.Date;
 @ToString
 public class StockTransactionHisEntity {
 
-    /** uuid **/
+    /**
+     * uuid
+     **/
     private String uuid;
 
     /**

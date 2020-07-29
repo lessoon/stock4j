@@ -1,7 +1,7 @@
 package com.lesson.stock4j.spider.cache;
 
-import com.lesson.stock4j.spider.mapper.StockListMapper;
 import com.lesson.stock4j.spider.entity.StockListEntity;
+import com.lesson.stock4j.spider.mapper.StockListMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -50,7 +50,7 @@ public class StockListCache {
         STOCK_LIST_CACHE.put(entity.getSymbol(), entity);
     }
 
-    public static Map<String, StockListEntity> getStockListAll(){
+    public static Map<String, StockListEntity> getStockListAll() {
         return STOCK_LIST_CACHE;
     }
 
