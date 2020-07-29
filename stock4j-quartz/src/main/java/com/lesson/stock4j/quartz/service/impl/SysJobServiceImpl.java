@@ -38,11 +38,10 @@ public class SysJobServiceImpl implements ISysJobService {
      */
     @PostConstruct
     public void init() throws SchedulerException, TaskException {
-//        scheduler.clear();
+        scheduler.clear();
         List<SysJob> jobList = jobMapper.selectJobAll();
         for (SysJob job : jobList) {
             ScheduleUtils.createScheduleJob(scheduler, job);
-            System.out.println("加载的job为" + job.toString());
         }
     }
 

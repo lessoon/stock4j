@@ -25,8 +25,8 @@ public class TestStockTransactionHisSpider {
     @Autowired
     private StockTransactionHisSpider spider;
 
-//    @Test
-//    public void test(){
-//        spider.run();
-//    }
+    @Test
+    public void test(){
+        spider.run();
+    }
 }

@@ -23,10 +23,10 @@ public class TestStockListSpider {
     @Autowired
     private StockListSpider spider;
 
-//    @Test
-//    public void test(){
-//        log.info("执行第一次！");
-//        spider.run();
-//    }
+    @Test
+    public void test(){
+        log.info("执行第一次！");
+        spider.run();
+    }
 
 }

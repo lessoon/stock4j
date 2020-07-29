@@ -15,9 +15,8 @@ import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfigurat
  * @since JDK 1.7
  * <p>Date: 2020-07-14 17-24
  */
-@MapperScan(basePackages = {"com.lesson.stock4j.quartz.mapper"})
-@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class, HibernateJpaAutoConfiguration.class})
-@EnableAutoConfiguration
+@MapperScan(basePackages = {"com.lesson.stock4j.*"})
+@SpringBootApplication
 public class Main {
 
     public static void main(String[] args) {

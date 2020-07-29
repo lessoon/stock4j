@@ -1,10 +1,9 @@
 package com.lesson.stock4j.spider;
 
+import com.lesson.stock4j.spider.util.QuartzUtils;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
 
 /**
@@ -15,9 +14,8 @@ import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfigurat
  * @since JDK 1.7
  * <p>Date: 2020-07-14 17-24
  */
-@MapperScan("com.lesson.stock4j.*.mapper")
-@SpringBootApplication(scanBasePackages = {"com.lesson.stock4j.*"}, exclude = {DataSourceAutoConfiguration.class, HibernateJpaAutoConfiguration.class})
-@EnableAutoConfiguration
+@MapperScan(basePackages = {"com.lesson.stock4j.*.*"},basePackageClasses = QuartzUtils.class)
+@SpringBootApplication
 public class Main {
 
     public static void main(String[] args) {
