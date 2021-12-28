@@ -1,10 +1,8 @@
-package com.lesson.stock4j.spider;
+package com.lesson.stock4j.view;
 
-import com.lesson.stock4j.common.util.SpringUtils;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Import;
 
 /**
  * 功能概述：启动类
@@ -16,7 +14,6 @@ import org.springframework.context.annotation.Import;
  */
 @MapperScan(basePackages = {"com.lesson.stock4j.*"})
 @SpringBootApplication
-@Import(SpringUtils.class)
 public class Main {
 
     public static void main(String[] args) {

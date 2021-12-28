@@ -11,6 +11,10 @@
 
     <artifactId>stock4j-spider</artifactId>
 
+    <properties>
+        <docker.image.prefix>springboot</docker.image.prefix>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.example</groupId>
@@ -47,6 +51,9 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>com.lesson.stock4j.spider.Main</mainClass>
+                </configuration>
             </plugin>
             <!-- 指定mainClass路径 -->
             <plugin>
@@ -60,6 +67,24 @@
                             <mainClass>com.lesson.stock4j.spider.Main</mainClass> <!-- 此处为主入口-->
                         </manifest>
                     </archive>
+                </configuration>
+            </plugin>
+            <!-- docker插件 -->
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>1.0.0</version>
+                <configuration>
+                    <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
+                    <!--docker文件所在的目录-->
+                    <dockerDirectory>src/main/docker</dockerDirectory>
+                    <resources>
+                        <resource>
+                            <targetPath>/</targetPath>
+                            <directory>${project.build.directory}</directory>
+                            <include>${project.build.finalName}.jar</include>
+                        </resource>
+                    </resources>
                 </configuration>
             </plugin>
         </plugins>

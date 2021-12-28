@@ -49,16 +49,27 @@
                     <source>${java.version}</source>
                     <target>${java.version}</target>
                     <encoding>${project.build.sourceEncoding}</encoding>
-                    <compilerArguments>
-                        <extdirs>${project.basedir}/../stock4j-common/target</extdirs>
-                    </compilerArguments>
                 </configuration>
             </plugin>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <includeSystemScope>true</includeSystemScope>
+                    <mainClass>com.lesson.stock4j.quartz.Main</mainClass>
+                </configuration>
+            </plugin>
+            <!-- 指定mainClass路径 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.0.2</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <mainClass>com.lesson.stock4j.quartz.Main</mainClass> <!-- 此处为主入口-->
+                        </manifest>
+                    </archive>
                 </configuration>
             </plugin>
         </plugins>
