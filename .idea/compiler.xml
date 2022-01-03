@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="stock4j-analysis" />
+        <module name="stock4j-view" />
+        <module name="stock4j-quartz" />
+        <module name="stock4j-common" />
+        <module name="stock4j-spider" />
+        <module name="stock4j-admin" />
+        <module name="stock4j-framework" />
+        <module name="stock4j-wx" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="stock4j" target="1.8" />
+      <module name="stock4j-admin" target="1.8" />
+      <module name="stock4j-analysis" target="1.8" />
+      <module name="stock4j-common" target="1.8" />
+      <module name="stock4j-framework" target="1.8" />
+      <module name="stock4j-quartz" target="1.8" />
+      <module name="stock4j-spider" target="1.8" />
+      <module name="stock4j-view" target="1.8" />
+      <module name="stock4j-wx" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="stock4j-admin" options="-parameters" />
+      <module name="stock4j-analysis" options="-parameters" />
+      <module name="stock4j-common" options="-parameters" />
+      <module name="stock4j-framework" options="-parameters" />
+      <module name="stock4j-quartz" options="-parameters" />
+      <module name="stock4j-spider" options="-parameters" />
+      <module name="stock4j-view" options="-parameters" />
+      <module name="stock4j-wx" options="-parameters" />
+    </option>
+  </component>
+</project>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/stock4j.iml" filepath="$PROJECT_DIR$/stock4j.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stock4j-admin/stock4j-admin.iml" filepath="$PROJECT_DIR$/stock4j-admin/stock4j-admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stock4j-analysis/stock4j-analysis.iml" filepath="$PROJECT_DIR$/stock4j-analysis/stock4j-analysis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stock4j-common/stock4j-common.iml" filepath="$PROJECT_DIR$/stock4j-common/stock4j-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stock4j-framework/stock4j-framework.iml" filepath="$PROJECT_DIR$/stock4j-framework/stock4j-framework.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stock4j-quartz/stock4j-quartz.iml" filepath="$PROJECT_DIR$/stock4j-quartz/stock4j-quartz.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stock4j-spider/stock4j-spider.iml" filepath="$PROJECT_DIR$/stock4j-spider/stock4j-spider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stock4j-view/stock4j-view.iml" filepath="$PROJECT_DIR$/stock4j-view/stock4j-view.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stock4j-wx/stock4j-wx.iml" filepath="$PROJECT_DIR$/stock4j-wx/stock4j-wx.iml" />
+    </modules>
+  </component>
+</project>
